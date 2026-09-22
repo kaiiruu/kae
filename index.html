@@ -99,21 +99,14 @@
   const videoSrc   = document.getElementById('bg-video-source');
   const overlay    = document.getElementById('tap-overlay');
 
-  const MOBILE_BREAKPOINT = 768; // px
-  function currentCategory() {
-    return window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`).matches ? 'mobile' : 'desktop';
+  function isMobileDevice() {
+    const ua = navigator.userAgent || navigator.vendor || '';
+    return /iPhone|iPod|Android/i.test(ua);
   }
 
-  let loadedCategory = null;
-  function syncVideoSource() {
-    const cat = currentCategory();
-    if (cat === loadedCategory) return;
-    loadedCategory = cat;
-    const wasPlaying = mediaUnlocked && !video.paused;
-    videoSrc.src = cat === 'mobile' ? './bg2.mp4' : './bg.mp4';
-    video.load();
-    if (wasPlaying) video.play().catch(() => {});
-  }
+  // Pick the right source once, based on the actual device — not window size.
+  videoSrc.src = isMobileDevice() ? './bg2.mp4' : './bg.mp4';
+  video.load();
 
   let mediaUnlocked = false;
   const VIDEO_FADE = 0.8; // seconds of fade in/out around each loop boundary
@@ -121,7 +114,6 @@
   function startMedia() {
     if (mediaUnlocked) return;
     mediaUnlocked = true;
-    syncVideoSource();
     video.play().catch(() => {});
     overlay.style.display = 'none';
   }
@@ -145,7 +137,6 @@
   function resizeVideo() {
     video.style.width  = window.innerWidth  + 'px';
     video.style.height = window.innerHeight + 'px';
-    syncVideoSource();
   }
   window.addEventListener('resize', resizeVideo);
   window.addEventListener('orientationchange', resizeVideo);
