@@ -12,7 +12,7 @@
 
 <!-- Background video -->
 <video id="bg-video" loop muted playsinline>
-  <source src="./bg.mp4" type="video/mp4">
+  <source id="bg-video-source" src="./bg.mp4" type="video/mp4">
 </video>
 
 <!-- Falling hearts canvas layer -->
@@ -94,9 +94,23 @@
 </audio>
 
 <script>
-  const audio   = document.getElementById('bg-music');
-  const video   = document.getElementById('bg-video');
-  const overlay = document.getElementById('tap-overlay');
+  const audio      = document.getElementById('bg-music');
+  const video      = document.getElementById('bg-video');
+  const videoSrc   = document.getElementById('bg-video-source');
+  const overlay    = document.getElementById('tap-overlay');
+
+  const MOBILE_BREAKPOINT = 768; // px
+  function isMobileScreen() {
+    return window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`).matches;
+  }
+
+  function pickVideoSource() {
+    const wanted = isMobileScreen() ? './bg2.mp4' : './bg.mp4';
+    if (!videoSrc.src.endsWith(wanted.replace('./', ''))) {
+      videoSrc.src = wanted;
+      video.load();
+    }
+  }
 
   let mediaUnlocked = false;
   const VIDEO_FADE = 0.8; // seconds of fade in/out around each loop boundary
@@ -104,6 +118,7 @@
   function startMedia() {
     if (mediaUnlocked) return;
     mediaUnlocked = true;
+    pickVideoSource();
     video.play().catch(() => {});
     overlay.style.display = 'none';
   }
@@ -123,6 +138,16 @@
       document.addEventListener('touchstart', unlock, { once: true });
     });
   }
+
+  function resizeVideo() {
+    video.style.width  = window.innerWidth  + 'px';
+    video.style.height = window.innerHeight + 'px';
+    if (!mediaUnlocked) pickVideoSource();
+  }
+  window.addEventListener('resize', resizeVideo);
+  window.addEventListener('orientationchange', resizeVideo);
+  pickVideoSource();
+  resizeVideo();
 
   function tickVideoFade() {
     if (!mediaUnlocked || !video.duration || isNaN(video.duration)) {
