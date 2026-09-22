@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FROM KAI TO KAE</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Dosis:800'>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./design.css">
+</head>
+<body>
+
+<!-- Background video -->
+<video id="bg-video" loop muted playsinline>
+  <source src="./bg.mp4" type="video/mp4">
+</video>
+
+<!-- Falling hearts canvas layer -->
+<canvas id="hearts-canvas"></canvas>
+
+<div id="ui">
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+  <div class="love"><div class="love_horizontal"><div class="love_vertical"><div class="love_word">Kashley</div></div></div></div>
+</div>
+
+<div id="tap-overlay">
+  <div id="tap-msg"> Tap anywhere to play music </div>
+</div>
+
+<audio id="bg-music" autoplay loop>
+  <source src="bg.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const audio   = document.getElementById('bg-music');
+  const video   = document.getElementById('bg-video');
+  const overlay = document.getElementById('tap-overlay');
+
+  let mediaUnlocked = false;
+  const VIDEO_FADE = 0.8; // seconds of fade in/out around each loop boundary
+
+  function startMedia() {
+    if (mediaUnlocked) return;
+    mediaUnlocked = true;
+    video.play().catch(() => {});
+    overlay.style.display = 'none';
+  }
+
+  audio.volume = 1;
+  const ap = audio.play();
+  if (ap !== undefined) {
+    ap.then(startMedia).catch(() => {
+      overlay.style.display = 'flex';
+      const unlock = () => {
+        audio.play();
+        startMedia();
+        document.removeEventListener('click',      unlock);
+        document.removeEventListener('touchstart', unlock);
+      };
+      document.addEventListener('click',      unlock, { once: true });
+      document.addEventListener('touchstart', unlock, { once: true });
+    });
+  }
+
+  function tickVideoFade() {
+    if (!mediaUnlocked || !video.duration || isNaN(video.duration)) {
+      video.style.opacity = 0;
+    } else {
+      const t = video.currentTime;
+      const d = video.duration;
+      let op = 1;
+      if (t < VIDEO_FADE) op = t / VIDEO_FADE;
+      else if (t > d - VIDEO_FADE) op = (d - t) / VIDEO_FADE;
+      video.style.opacity = Math.max(0, Math.min(1, op));
+    }
+    requestAnimationFrame(tickVideoFade);
+  }
+  requestAnimationFrame(tickVideoFade);
+
+  const canvas = document.getElementById('hearts-canvas');
+  const ctx    = canvas.getContext('2d');
+
+  const COLORS = [
+    '#ad1457',   // deep rose
+    '#d6336c',   // rich pink
+    '#ff2d78',   // vivid pink
+    '#ff5c8a',   // medium pink
+    '#ff85a1',   // bright pink
+    '#ffb3c6',   // pale pink
+    '#ffc2d1',   // soft blush pink
+  ];
+
+  const HEART_BASELINE_AREA  = 1512 * 900; // density tuned at this viewport size
+  const HEART_BASELINE_COUNT = 42;
+  const HEART_MIN = 18;
+  const HEART_MAX = 90;
+
+  function calcHeartCount() {
+    const area = window.innerWidth * window.innerHeight;
+    const scaled = Math.round(HEART_BASELINE_COUNT * (area / HEART_BASELINE_AREA));
+    return Math.max(HEART_MIN, Math.min(HEART_MAX, scaled));
+  }
+
+  let hearts = [];
+
+  function resize() {
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const target = calcHeartCount();
+    while (hearts.length < target) hearts.push(randomHeart(true));
+    if (hearts.length > target) hearts.length = target;
+  }
+
+  let resizeTimer = null;
+  function scheduleResize() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(resize, 120);
+  }
+  window.addEventListener('resize', scheduleResize);
+  window.addEventListener('orientationchange', resize);
+  resize();
+
+  function randomHeart(spreadY) {
+    const size = Math.random() * 24 + 9;
+    return {
+      x:     Math.random() * canvas.width,
+      y:     spreadY !== undefined ? Math.random() * canvas.height : -size * 2,
+      size,
+      speed: Math.random() * 1.8 + 0.5,
+      sway:  Math.random() * 1.4 - 0.7,
+      angle: Math.random() * Math.PI * 2,
+      spin:  (Math.random() - 0.5) * 0.045,
+      color: COLORS[Math.floor(Math.random() * COLORS.length)],
+      alpha: Math.random() * 0.55 + 0.45,
+    };
+  }
+
+  function drawHeart(cx, cy, size, color, alpha, angle) {
+    ctx.save();
+    ctx.translate(cx, cy);
+    ctx.rotate(angle);
+    ctx.globalAlpha = alpha;
+    ctx.fillStyle   = color;
+    ctx.shadowColor = color;
+    ctx.shadowBlur  = 12;
+    const s = size / 10;
+    ctx.beginPath();
+    ctx.moveTo(0, s * 3);
+    ctx.bezierCurveTo( s * 5, -s * 2,  s * 12, s * 3, 0, s * 9);
+    ctx.bezierCurveTo(-s * 12, s * 3, -s * 5, -s * 2, 0, s * 3);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    hearts.forEach(h => {
+      h.y     += h.speed;
+      h.x     += Math.sin(h.y / 55) * h.sway;
+      h.angle += h.spin;
+      if (h.y > canvas.height + h.size * 2) {
+        Object.assign(h, randomHeart());
+      }
+      drawHeart(h.x, h.y, h.size, h.color, h.alpha, h.angle);
+    });
+    requestAnimationFrame(animate);
+  }
+  animate();
+</script>
+</body>
+</html>

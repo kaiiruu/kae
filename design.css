@@ -1,0 +1,19 @@
+#Heart {
+  cursor: pointer;
+  will-change: transform;
+  transform-origin: 50% 50%;
+  -webkit-animation: heart 1.8s cubic-bezier(0.17, 0.89, 0.32, 1.49);
+          animation: heart 1.8s cubic-bezier(0.17, 0.89, 0.32, 1.49);
+}
+
+@keyframes heart {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.35); }
+  60%  { transform: scale(0.9); }
+  80%  { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+#hearts-canvas {
+  mix-blend-mode: screen;
+}
