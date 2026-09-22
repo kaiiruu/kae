@@ -100,16 +100,19 @@
   const overlay    = document.getElementById('tap-overlay');
 
   const MOBILE_BREAKPOINT = 768; // px
-  function isMobileScreen() {
-    return window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`).matches;
+  function currentCategory() {
+    return window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`).matches ? 'mobile' : 'desktop';
   }
 
-  function pickVideoSource() {
-    const wanted = isMobileScreen() ? './bg2.mp4' : './bg.mp4';
-    if (!videoSrc.src.endsWith(wanted.replace('./', ''))) {
-      videoSrc.src = wanted;
-      video.load();
-    }
+  let loadedCategory = null;
+  function syncVideoSource() {
+    const cat = currentCategory();
+    if (cat === loadedCategory) return;
+    loadedCategory = cat;
+    const wasPlaying = mediaUnlocked && !video.paused;
+    videoSrc.src = cat === 'mobile' ? './bg2.mp4' : './bg.mp4';
+    video.load();
+    if (wasPlaying) video.play().catch(() => {});
   }
 
   let mediaUnlocked = false;
@@ -118,7 +121,7 @@
   function startMedia() {
     if (mediaUnlocked) return;
     mediaUnlocked = true;
-    pickVideoSource();
+    syncVideoSource();
     video.play().catch(() => {});
     overlay.style.display = 'none';
   }
@@ -142,11 +145,10 @@
   function resizeVideo() {
     video.style.width  = window.innerWidth  + 'px';
     video.style.height = window.innerHeight + 'px';
-    if (!mediaUnlocked) pickVideoSource();
+    syncVideoSource();
   }
   window.addEventListener('resize', resizeVideo);
   window.addEventListener('orientationchange', resizeVideo);
-  pickVideoSource();
   resizeVideo();
 
   function tickVideoFade() {
